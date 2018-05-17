@@ -10,10 +10,8 @@
 			</h2>
 			<p><%= truncate(strip_tags(@post.content),length: 140,separate: '') %></p>
 			<p class="postControl">
-				<button><a href="#"><span class="fa fa-link fa-fw"></span> Publish</a></button>
 				<button class="pCreate"><span class="fa fa-edit fa-fw"></span> Edit</button>
 				<button><%= link_to admin_post_path(@post),method: :delete,data:{confirm:"确定要删除吗？" } do %><span class="fa fa-trash fa-fw"></span> Delete<% end %></button>
-				<span>(未发表)</span>
 			</p>
 		</div>
 	</div>

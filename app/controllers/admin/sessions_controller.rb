@@ -1,8 +1,8 @@
-class Admin::SessionsController < ApplicationController
+class Admin::SessionsController < Admin::ApplicationController
 
   layout 'layouts/session'
 
-  before_action :authorize,except:[:new,:create]
+  before_action :authorize,only:[:destroy]
 
   def new
   end

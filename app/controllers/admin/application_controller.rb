@@ -5,7 +5,7 @@ class Admin::ApplicationController < ActionController::Base
 
   before_action :authorize
 
-  def current_admin
+  	def current_admin
 		@admin ||= User.find(session[:current_admin_id]) if session[:current_admin_id]
 	end
 
