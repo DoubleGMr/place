@@ -5,7 +5,7 @@
 			<h3>热门浏览(<%= tag.name %>)</h3>
 			<ul>
 				<% tag.posts.each do |post| %>
-				<li><%= link_to "#{post.title}(#{post.location})" %></li>
+				<li><%= link_to "#{post.title}(#{post.location})", num == 1 ? post : admin_post_path(post) %></li>
 				<% end %>
 			</ul>
 		</div>
