@@ -1,0 +1,27 @@
+<header>
+	<div class="container flex">
+		<div class="logo">
+			<h1>
+				<%= link_to admin_posts_path do %>
+					<p>“管<span>理台 ”</span></p>
+				<% end %>
+			</h1>
+		</div>
+		<div>
+			<ul class="flex">
+				<li><%= link_to "首页",admin_posts_path %></li>
+				<li><%= link_to "我们",admin_abouts_path %></li>
+			</ul>
+		</div>
+		<div class="search">
+			<%= render 'commond/search', route: admin_posts_path %>
+		</div>
+		<div class="flex">
+			<div>
+				<a class="button buttonStyle2 pCreate">创建文章</a>
+				<%= link_to '收信',admin_messages_path,class: 'buttonStyle1 button' %>
+				<%= link_to '退出',logout_path,class: 'buttonStyle2 button',method: :delete %>
+			</div>
+		</div>	
+	</div>
+</header>

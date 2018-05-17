@@ -1,0 +1,28 @@
+<div class="banner">
+	<div class="container">
+		<div class="aboutWeb">
+			<h2 class="flex">
+				<%= @post.title %><span> (<%= @post.location %>)</span>
+				<button class="video"><span class="fa fa-play fa-fw"></span></button>
+				<div>
+					<p><span><%= time_now(@post.created_at) %></span></p>
+				</div>
+			</h2>
+			<p><%= truncate(strip_tags(@post.content),length: 140,separate: '') %></p>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="content flex">
+		<div class="left-content">
+			<div class="post">
+				<%= sanitize(@post.content) %>
+			</div>
+		</div>
+		<%= render 'commond/contentRight' %>
+	</div>
+</div>
+<div class="video-box">
+	<iframe src="" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" s="<%= @post.video %>"> </iframe>
+	<span class="close"><span class="fa fa-close fa-fw"></span></span>
+</div>

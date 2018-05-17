@@ -1,0 +1,28 @@
+<div class="right-list">
+	<% @tags.each do |tag| %>
+	<div class="hot-list">
+		<div>
+			<h3>热门浏览(<%= tag.name %>)</h3>
+			<ul>
+				<% tag.posts.each do |post| %>
+				<li><%= link_to "#{post.title}(#{post.location})" %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+	<% end %>
+	<footer>
+		<div class="clearData">
+			<h3>联系方式 Contact</h3>
+			<ul>
+				<li><span class="fa fa-envelope-o fa-fw"></span>邮箱: xxxxxxxxxxxxx@163.com</li>
+				<li><span class="fa fa-phone fa-fw"></span>电话: xxxxxxxxxxxxxxx</li>
+				<li><span class="fa fa-globe fa-fw"></span>地址: 广东省湛江市湖光镇海达路一号广东海洋大学</li>
+				<li><span class="fa fa-code fa-fw"></span>邮编: 5968</li>
+			</ul>
+		</div>
+		<div class="web">
+			<p>网站归属 &copyright 2018-2019 xxxxxxxxxxxxxxxxx</p>
+		</div>
+	</footer>
+</div>

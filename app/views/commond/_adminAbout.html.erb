@@ -1,0 +1,13 @@
+<div class="pc-about">
+	<div class="pc-area">
+		<%= form_for [:admin, @about] do |f| %>
+			<div>
+				<%= f.cktext_area :content, ckeditor:{ toolbar: 'mini', language: 'zh-CN'} %>
+			</div>
+			<div>
+				<%= f.submit "创建/更新文章",class: 'button buttonStyle2' %>
+			</div>
+		<% end %>
+	</div>
+	<span class="close"><span class="fa fa-close fa-fw"></span></span>
+</div>

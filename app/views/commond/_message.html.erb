@@ -1,0 +1,20 @@
+<div class="pc">
+	<div class="pc-area" style="margin: 10vh auto;">
+		<h2>欢迎来信</h2>
+		<%= form_for @message do |f| %>
+			<div>
+				<%= f.text_field :name, placeholder:'填写您的称呼' %>
+			</div>
+			<div>
+				<%= f.text_field :email, placeholder:'填写您的使用邮箱' %>
+			</div>
+			<div>
+				<%= f.text_area :content, placeholder:'填写信件内容' %>
+			</div>
+			<div>
+				<%= f.submit "快速投递",class: 'button buttonStyle2' %>
+			</div>
+		<% end %>
+	</div>
+	<span class="close"><span class="fa fa-close fa-fw"></span></span>
+</div>

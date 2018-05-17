@@ -1,0 +1,48 @@
+<%= render 'commond/adminBanner' %>
+<div class="container">
+	<div class="content flex">
+		<div class="left-content">
+			<div class="sort">
+				<h3 class="flex">
+					<p>
+						<%= link_to admin_posts_path do %><span class="fa fa-crosshairs fa-fw"></span>所有内容<% end %>
+					</p>
+					<ul class="flex">
+						<% @tags.each do |tag| %>
+							<li><%= link_to admin_posts_path(tag: tag.name) do %>
+									<span class="fa fa-map-marker fa-fw"></span>
+									<%= tag.name %>
+								<% end %>
+							</li>
+						<% end %>
+					</ul>
+					<span>
+						<%= link_to admin_posts_path(sort: 1,tag: @tag,search: @search) do %>
+							<span class="fa fa-exchange fa-fw"></span>时间升序
+						<% end %>
+						<%= link_to '时间降序', admin_posts_path(sort: 2,tag: @tag,search: @search) %>
+					</span>
+				</h3>
+			</div>
+			<div class="content-list">
+				<ul>
+					<% @posts.each do |post| %>
+					<li class="flex">
+						<div class="img">
+							<%= image_tag("#{post.img}") %>
+						</div>
+						<div class="data">
+							<h2><%= link_to admin_post_path(post) do %><%= post.title %><% end %><span><%= post.location %></span><span class="view"><span class="fa fa-eye fa-fw"></span> <%= post.pviews.count %>观看次数</span></h2>
+							<p><%= truncate(strip_tags(post.content),length: 140,separate: '') %></p>
+						</div>
+					</li>
+					<% end %>
+				</ul>
+				<div>
+					<a href="#"><span class="fa fa-undo fa-fw"></span> 加载更多</a>
+				</div>
+			</div>
+		</div>
+		<%= render 'commond/contentRight' %>
+	</div>
+</div>

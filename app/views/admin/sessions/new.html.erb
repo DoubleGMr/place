@@ -1,0 +1,11 @@
+<%= form_for(:session,url: admin_path) do |f| %>
+  <div>
+    <%= f.text_field :account, placeholder: '请输入你的账号...' %>
+  </div>
+  <div>
+    <%= f.password_field :password, placeholder: '请输入你的密码...' %>
+  </div>
+  <div>
+    <%= f.submit "快速登陆", class: 'buttonStyle1' %>
+  </div>
+<% end %>

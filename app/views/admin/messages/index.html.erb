@@ -1,0 +1,45 @@
+<%= render 'commond/adminBanner' %>
+<div class="container">
+	<div class="content flex">
+		<div class="left-content">
+			<div class="sort">
+				<h3 class="flex">
+					<p><a href="#"><span class="fa fa-crosshairs fa-fw"></span>所有来信</a></p>
+					<ul class="flex">
+						<li><a href="#"><span class="fa fa-map-marker fa-fw"></span>已读</a></li>
+						<li><a href="#"><span class="fa fa-map-marker fa-fw"></span>未读</a></li>
+					</ul>
+					<span>
+						<a href="#"><span class="fa fa-chevron-up fa-fw"></span>时间升序</a>
+						<a href="#"><span class="fa fa-chevron-down fa-fw"></span>时间降序</a>
+					</span>
+				</h3>
+			</div>
+			<div class="content-list">
+				<ul>
+					<% @messages.each do |message| %>
+						<li class="flex">
+							<div class="data">
+								<h2>
+									<a><%= message.name %></a>
+									<span><%= message.email %></span>
+									<span class="view">
+										<%= link_to admin_message_path(message),method: :delete,data:{confirm:"确定删除该信件吗？"} do %>
+											<span class="fa fa-trash fa-fw"></span>
+										<% end %>
+										<%= time_now(message.created_at) %>
+									</span>
+								</h2>
+								<p><%= message.content %></p>
+							</div>
+						</li>
+					<% end %>
+				</ul>
+				<div>
+					<a href="#"><span class="fa fa-undo fa-fw"></span> 加载更多</a>
+				</div>
+			</div>
+		</div>
+		<%= render 'commond/contentRight' %>
+	</div>
+</div>

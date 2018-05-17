@@ -1,0 +1,26 @@
+<header>
+	<div class="container flex">
+		<div class="logo">
+			<h1>
+				<%= link_to root_path do %>
+					<p>“百<span>越 ”</span></p>
+				<% end %>
+			</h1>
+		</div>
+		<div>
+			<ul class="flex">
+				<li><%= link_to '首页',root_path %></li>
+				<li><%= link_to '我们',about_path %></li>
+			</ul>
+		</div>
+		<div class="search">
+			<%= render 'commond/search', route: root_path %>
+		</div>
+		<div class="flex">
+			<div>
+				<a class="button buttonStyle2 pCreate">联系我们</a>
+				<%= link_to '登陆', admin_path, class: 'buttonStyle1 button' %>
+			</div>
+		</div>	
+	</div>
+</header>

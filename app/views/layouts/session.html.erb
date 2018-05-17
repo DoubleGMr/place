@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <%= render 'commond/flash' %>
+    <div class="session flex">
+    <div class="leftWord flex flex-center">
+      <h1><a href="index.html">Welcome to <span>Admin</span> Console</a></h1>
+      <h2></h2>
+    </div>
+    <div class="rightSession flex flex-center">
+      <div class="flex flex-center">
+        <h1><span>Admin</span> Console</h1>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

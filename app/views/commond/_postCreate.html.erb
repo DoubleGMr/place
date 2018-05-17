@@ -1,0 +1,62 @@
+<div class="pc">
+	<div class="pc-area">
+		<%= form_for [:admin, @post] do |f| %>
+			<div>
+				<%= f.text_field :title, placeholder:'填写村落的名称' %>
+			</div>
+			<div>
+				<%= f.text_field :location, placeholder:'填写村落的地址' %>
+			</div>
+			<div>
+				<%= f.select :tag_id, Tag.all.collect {|t| [t.name, t.id]},multiple: :true %>
+			</div>
+			<div>
+				<%= f.text_field :banner, placeholder:'填写村落的banner图像地址,1024*400' %>
+			</div>
+			<div>
+				<%= f.text_field :video, placeholder:'填写村落的影像地址' %>
+			</div>
+			<div>
+				<%= f.text_field :img, placeholder:'填写村落的图片地址' %>
+			</div>
+			<div>
+				<%= f.cktext_area :content, ckeditor:{ toolbar: 'mini', language: 'zh-CN'}, placeholder:'填写村落的简介' %>
+			</div>
+			<div>
+				<%= f.check_box :publish %><span>是否发表</span>
+			</div>
+			<div>
+				<%= f.submit "创建/更新文章",class: 'button buttonStyle2' %>
+			</div>
+		<% end %>
+		<!-- <form action="#">
+			<div>
+				<input type="text" placeholder="填写村落的名称">
+			</div>
+			<div>
+				<input type="text" placeholder="填写村落的地址">
+			</div>
+			<div>
+				<input type="text" placeholder="填写村落的简介">
+			</div>
+			<div>
+				<label for="banner">上传村落的banner图(尺寸: 1024*400)</label>
+				<input type="file">
+			</div>
+			<div>
+				<label for="video">上传村落的宣传视频</label>
+				<input type="file">
+			</div>
+			<div>
+				<textarea placeholder="填写村落的介绍"></textarea>
+			</div>	
+			<div>
+				<input type="checkbox"><span>是否发表</span>
+			</div>
+			<div>
+				<input type="submit" value="创建/更新文章" class="button buttonStyle2">
+			</div>
+		</form> -->
+	</div>
+	<span class="close"><span class="fa fa-close fa-fw"></span></span>
+</div>
