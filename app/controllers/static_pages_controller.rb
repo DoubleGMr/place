@@ -38,6 +38,7 @@ class StaticPagesController < ApplicationController
 
   def about
   	@about = About.first
+    @view = View.all.count
   end
 
   private

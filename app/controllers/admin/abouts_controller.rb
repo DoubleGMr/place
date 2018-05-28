@@ -6,6 +6,7 @@ class Admin::AboutsController < Admin::ApplicationController
   		@about = About.new
   	end
   	@post = Post.new
+    @view = View.all.count
   end
 
   def create

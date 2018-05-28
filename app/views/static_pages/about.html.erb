@@ -4,7 +4,7 @@
 			<h2 class="flex">
 				网站信息<span> (建站于二零一八年五月二十日)</span>
 				<div>
-					<p><span>2000</span> 浏览量</p>
+					<p><span><%= @view %></span> 浏览量</p>
 				</div>
 			</h2>
 			<p>网站立项于推广宣传古村落的文化传承，不涉及商业用途。</p>
@@ -16,9 +16,9 @@
 	<div class="content flex">
 		<div class="left-content">
 			<div class="about">
-				<%= sanitize(@about.content) %>
+				<%= sanitize(@about.content) if @about %>
 			</div>
 		</div>
-		<%= render 'commond/contentRight' %>
+		<%= render 'commond/contentRight',num: 2 %>
 	</div>
 </div>
